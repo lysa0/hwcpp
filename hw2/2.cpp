@@ -10,13 +10,15 @@ void solve(){
   int it{};
   for(int **i=a; i<a+10; it++, i++){
     *i = new int[it+1]{};
+    //memset(*i, -1, (it+1)*sizeof(int));
     *(*i+it)=1;
   }
   it=0;
-  for(int **i = a; i < a+10; it++, i++)
+  for(int **i = a; i < a+10; it++, i++){
     for (int *j = *i; j <= *i+it; j++)
       cout << *j << " \n"[j==*i+it];
-  //Для проверки
+  }
+  //For testing
   //for(int i=0; i<10; i++)
   //  for(int j=0; j<=i; j++)
   //    cout << a[i][j] << " \n"[j==i];
