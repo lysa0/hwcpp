@@ -8,7 +8,7 @@ int main(){
   solve();
 }
 void solve(){
-  int a[5]{15,27,243,100, 387420488};
+  int a[5]{15, 27, 243, 100, 387420488};
   for (int *it = a; it<a+5; it++){
       cout << *it << " its " << degThr(*it) << " degree three\n"; 
   }
