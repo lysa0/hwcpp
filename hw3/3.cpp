@@ -1,11 +1,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 class stc{
-  public:
   stc * prev,
       * head;
   int data{},
       size{};
+  public:
   stc(){
   }
   void push(int val){

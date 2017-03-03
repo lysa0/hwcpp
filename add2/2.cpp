@@ -1,12 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 class stc{
-  public:
   stc * prev,
       * head;
   int data{},
       size{},
       sumSt{};
+  public:
   stc(){
   }
   void push(int val){
