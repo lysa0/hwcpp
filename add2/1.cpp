@@ -8,12 +8,12 @@ int main(){
   solve();
 }
 void solve(){
-  int a[5]{15, 27, 243, 100, 387420488};
+  int a[5]{15, 0, 243, 100, 387420489};
   for (int *it = a; it<a+5; it++){
       cout << *it << " its " << degThr(*it) << " degree three\n"; 
   }
 }
 bool degThr(int a){
-  for(; a%3==0; a/=3);
+  for(; a%3==0 && a; a/=3);
   return a==1;
 }
