@@ -3,7 +3,7 @@
 #define delta 1e-9
 using namespace std;
 void solve();
-bool degThr(const int & a);
+bool degThr(const int a);
 int main(){
   solve();
 }
@@ -13,6 +13,7 @@ void solve(){
       cout << *it << " its " << degThr(*it) << " degree three\n"; 
   }
 }
-bool degThr(const int &a){
-  return (fabs(a-(pow(3,(int)(log(a)/log(3)+eps))))<delta);
+bool degThr(int a){
+  for(; a%3==0; a/=3);
+  return a==1;
 }
