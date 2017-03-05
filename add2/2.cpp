@@ -1,23 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
+struct node{
+  node * prev{};
+  int data{};
+  node(){
+  }
+  ~node(){
+  }
+};
 class stc{
-  stc * prev,
-      * head;
-  int data{},
-      size{},
+  node * head{};
+  int size{},
       sumSt{};
   public:
   stc(){
   }
   void push(int val){
-    stc * tmp = new stc;
+    node * tmp = new node;
     tmp->prev = head;
-    tmp->data=val;
+    tmp->data = val;
     head = tmp;
     sumSt+=val;
   }
   int pop(){
-    if (head==NULL){
+    if (!head){
       cout << "STACK EMPTY\n";
       exit(9999);
     }
@@ -27,9 +33,9 @@ class stc{
     return tmp;
   }
   void print(){
-    stc * tmp = head;
+    node * tmp = head;
     cout << "Stack: ";
-    while(tmp!=NULL){
+    while(tmp){
       cout << tmp->data << ' ';
       tmp=tmp->prev;
     }
@@ -37,6 +43,8 @@ class stc{
   }
   int sum(){
     return sumSt;
+  }
+  ~stc(){
   }
 };
 void solve();
