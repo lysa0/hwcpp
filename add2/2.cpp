@@ -28,9 +28,11 @@ class stc{
       exit(9999);
     }
     sumSt-=head->data;
-    int tmp = head->data;
-    head=head->prev;
-    return tmp;
+    int val = head->data;
+    node * tmp = head->prev;
+    free(head);
+    head=tmp;
+    return val;
   }
   void print(){
     node * tmp = head;
