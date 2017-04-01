@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 void solve();
-bool canSplit(list<int> mainList, list<int> subList1, list<int> subList2);
+bool canSplit(list<int> &mainList, list<int> &subList1, list<int> &subList2);
 int main(){
   solve();
   return 0;
@@ -29,7 +29,7 @@ void solve(){
     cout << "Res: " << canSplit(list1, list2, list3) << ", ans: " << boo << endl;
   }
 }
-bool canSplit(list<int> mainList, list<int> subList1, list<int> subList2){
+bool canSplit(list<int> &mainList, list<int> &subList1, list<int> &subList2){
   list<int>::iterator iterM=mainList.begin(), iter1=subList1.begin(), iter2=subList2.begin();
   if (mainList.size()!=subList1.size()+subList2.size())
     return 0;
@@ -46,7 +46,5 @@ bool canSplit(list<int> mainList, list<int> subList1, list<int> subList2){
       else
         return 0;
   }
-  if (iterM!=mainList.end() || iter1!=subList1.end() || iter2!=subList2.end())
-    return 0;
   return 1;
 }
