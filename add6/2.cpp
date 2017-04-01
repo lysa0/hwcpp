@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 void solve();
-list<int> getDiff(list<int> numb1, list<int> numb2);
+list<int> getDiff(list<int>& numb1, list<int>& numb2);
 int main(){
   solve();
   return 0;
@@ -25,10 +25,10 @@ void solve(){
   for(auto num:res)
     cout << num << ' ';
 }
-list<int> getDiff(list<int> numb1, list<int> numb2){
+list<int> getDiff(list<int>&numb1, list<int>&numb2){
   list<int> res;
   list<int>::iterator iter1=numb1.begin(), iter2=numb2.begin();
-  do{
+  while(iter1!=numb1.end() && iter2!=numb2.end()){
     if (*iter1<*iter2){
       res.push_back(*iter1);
       iter1++;
@@ -38,7 +38,7 @@ list<int> getDiff(list<int> numb1, list<int> numb2){
         iter1++;
       iter2++;
     }
-  }while(iter1!=numb1.end() && iter2!=numb2.end());
+  }
   while(iter1!=numb1.end()){
     res.push_back(*iter1);
     iter1++;
