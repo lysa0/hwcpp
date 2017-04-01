@@ -7,26 +7,46 @@ int main(){
   return 0;
 }
 void solve(){
-  list<int> mL {1, 3, 2, 7, 9, 3, 1}, sL1{1, 3, 7, 1}, sL2{2,9,3}, sL3{9, 2, 3};
-  cout << canSplit(mL, sL1, sL2) << endl;
-  cout << canSplit(mL, sL1, sL3) << endl; 
+  ifstream fin("tests.in");
+  int a, b, c;
+  bool boo;
+  while(fin>>a>>b>>c){
+    int tmp;
+    list<int> list1, list2, list3;
+    for(int i=0; i<a; i++){
+      fin >> tmp;
+      list1.push_back(tmp);
+    }
+    for(int i=0; i<b; i++){
+      fin >> tmp;
+      list2.push_back(tmp);
+    }
+    for(int i=0; i<c; i++){
+      fin >> tmp;
+      list3.push_back(tmp);
+    }
+    fin >> boo;
+    cout << "Res: " << canSplit(list1, list2, list3) << ", ans: " << boo << endl;
+  }
 }
 bool canSplit(list<int> mainList, list<int> subList1, list<int> subList2){
   list<int>::iterator iterM=mainList.begin(), iter1=subList1.begin(), iter2=subList2.begin();
   if (mainList.size()!=subList1.size()+subList2.size())
     return 0;
-  do{
-    if (*iterM==*iter1){
+  while(iterM!=mainList.end() || iter1!=subList1.end() || iter2!=subList2.end()){
+    if (iter1!=subList1.end() && *iterM==*iter1){
       iterM++;
       iter1++;
     }
     else
-      if(*iterM==*iter2){
+      if(iter2!=subList2.end() && *iterM==*iter2){
         iterM++;
         iter2++;
       }
       else
         return 0;
-  }while(iterM!=mainList.end() && iter1!=subList1.end() && iter2!=subList2.end());
+  }
+  if (iterM!=mainList.end() || iter1!=subList1.end() || iter2!=subList2.end())
+    return 0;
   return 1;
 }
