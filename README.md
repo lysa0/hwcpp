@@ -1,4 +1,4 @@
 Homework for the course "C++ Programming Language"
 
-Simuni Michael Lazarevic
+Simuni M. L.
 
