@@ -20,12 +20,12 @@ void solve(){
   while(lastName!="*"){
     cin >> eval;
     auto iter = evals.find(lastName);
-    if (iter==evals.end()){
-      evals.insert({lastName,{0,0}});
-      iter=evals.find(lastName);
+    if (iter==evals.end())
+      evals.insert({lastName,{eval,1}});
+    else{
+      iter->second.sum+=eval;
+      iter->second.cnt++;
     }
-    iter->second.sum+=eval;
-    iter->second.cnt++;
     cin >> lastName;
   }
   for(auto eval:evals)
