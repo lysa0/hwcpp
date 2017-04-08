@@ -13,8 +13,9 @@ void solve(){
     string lastName;
     int eval;
     cin >> lastName >> eval; 
-    if (bestEvals.find(lastName)!=bestEvals.end())
-      bestEvals[lastName]=max(bestEvals[lastName], eval);
+    auto iter = bestEvals.find(lastName);
+    if (iter!=bestEvals.end())
+      (*iter).second=max((*iter).second, eval);
     else
       bestEvals[lastName]=eval;
   }
