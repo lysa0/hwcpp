@@ -7,5 +7,5 @@ int main(){
 }
 void solve(){
   vector<vector<int>> vvi{{10, 21}, {1,2}, {2,4,3}, {2, 4, 6, 8}};
-  cout << any_of(vvi.begin(), vvi.end(), [](vector<int> vi){return all_of(vi.begin(), vi.end(), [](int i){return i%10==0;});});
+  cout << any_of(vvi.begin(), vvi.end(), [](const vector<int>& vi){return all_of(vi.begin(), vi.end(), [](int i){return i%10==0;});});
 }
