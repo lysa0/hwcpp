@@ -1,10 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 struct evalStat{
-  evalStat(int sum, int cnt){
-    this->sum=sum;
-    this->cnt=cnt;
-  }
   int sum, cnt;
 };
 void solve();
