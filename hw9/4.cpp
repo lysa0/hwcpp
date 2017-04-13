@@ -35,7 +35,7 @@ class myQu{
     tail=tmp;
   }
   T pop(){
-    if (!head){
+    if (head==NULL){     /// С типом string на этом моменте работает как-то неочевидно
       cout << "Stack empty";
       return 0;
     }
@@ -65,28 +65,28 @@ int main(){
   return 0;
 }
 void solve(){
-  myQu<int> mq;
+  myQu<char> mq;
   mq.print();
-  mq.push(5);
+  mq.push('y');
   mq.print();
-  mq.push(6);
+  mq.push('e');
   mq.print();
-  mq.push(4);
-  mq.push(9);
-  mq.print();
-  cout << mq.pop() << endl;
-  mq.print();
-  mq.push(12);
+  mq.push('a');
+  mq.push('z');
   mq.print();
   cout << mq.pop() << endl;
-  cout << mq.pop() << endl;
+  mq.print();
+  mq.push('h');
+  mq.print();
   cout << mq.pop() << endl;
   cout << mq.pop() << endl;
   cout << mq.pop() << endl;
-  mq.push(2);
-  mq.push(1);
-  mq.push(4);
-  mq.push(6);
-  mq.push(1);
+  cout << mq.pop() << endl;
+  cout << mq.pop() << endl;
+  mq.push('b');
+  mq.push('b');
+  mq.push('b');
+  mq.push('a');
+  mq.push('1');
   mq.print();
 }
