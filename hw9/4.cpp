@@ -35,7 +35,7 @@ class myQu{
     tail=tmp;
   }
   T pop(){
-    if (head==NULL){     /// С типом string на этом моменте работает как-то неочевидно
+    if (!head){     /// С типом string на этом моменте работает как-то неочевидно
       cout << "Stack empty";
       return 0;
     }
