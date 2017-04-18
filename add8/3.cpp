@@ -14,13 +14,13 @@ void solve(){
     if ((it1==favorBooks.end()) != (it2==favorBands.end())){
       cout << "Interests overlap: ";
       if (it1!=favorBooks.end())
-        cout << lastName <<  " " << favorBooks[book];
+        cout << lastName <<  " " << (*it1).second;
       else
-        cout << lastName << " " << favorBands[band];
+        cout << lastName << " " << (*it2).second;
       break;
     }
-    favorBooks[book]=lastName;
-    favorBands[band]=lastName;
+    favorBooks.insert({book, lastName});
+    favorBands.insert({band, lastName});
     // если оба интереса совпадают, прежний человек сотрется, но ведь нужно найти только двух, одним из которых будет новый
   }
 }

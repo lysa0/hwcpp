@@ -6,9 +6,14 @@ int main(){
   return 0;
 }
 void solve(){
-  map<pair<string, string>, string> favorBooks;
+  map<pair<string, string>, string> favorBooksAndBands;
   string lastName, book, band;
-  while(cin >> lastName >> book >> band && favorBooks.find({book, band})==favorBooks.end())
-    favorBooks[{book, band}]=lastName;
-  cout << "Interests coincode: " << lastName << ' ' << favorBooks[{book, band}];
+  while(cin >> lastName >> book >> band){
+    auto it = favorBooksAndBands.find({book, band});
+    if (it!=favorBooksAndBands.end()){
+      cout << "Interests coincode: " << lastName << ' ' << (*it).second;
+      break;
+    }
+    favorBooksAndBands.insert({{book, band},lastName});
+  }
 }

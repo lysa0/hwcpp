@@ -8,7 +8,12 @@ int main(){
 void solve(){
   map<string, string> favorBooks;
   string lastName, book;
-  while(cin >> lastName >> book && favorBooks.find(book)==favorBooks.end())
-    favorBooks[book]=lastName;
-  cout << "Interests coincode: " << lastName << ' ' << favorBooks[book];
+  while(cin >> lastName >> book){
+    auto it = favorBooks.find(book);
+    if (it!=favorBooks.end()){
+      cout << "Interests coincode: " << lastName << ' ' << (*it).second;
+      break;
+    }
+    favorBooks.insert({book, lastName});
+  }
 }
