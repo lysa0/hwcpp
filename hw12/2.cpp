@@ -6,7 +6,11 @@ int main(){
   return 0;
 }
 void solve(){
-  int a;
+  int a, res{};
   cin >> a;
-  cout << __builtin_popcount(a);
+  while(a){
+    res+=(a&1);
+    a>>=1;
+  }
+  cout << res;
 }
